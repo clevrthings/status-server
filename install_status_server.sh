@@ -8,3 +8,6 @@ chmod +x /tmp/start_status_server.sh
 
 # Run the installation script
 sudo /tmp/start_status_server.sh
+
+# Clean up the tmp file
+sudo rm -r /tmp/start_status_server.sh

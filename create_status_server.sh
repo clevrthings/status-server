@@ -22,13 +22,13 @@ if __name__ == '__main__':
 EOF
 
 # Create the systemd service file for status_server
-cat << 'EOF' > /etc/systemd/system/status_server.service
+cat << 'EOF' > /etc/systemd/system/clevrthings_status_server.service
 [Unit]
-Description=Status Server
+Description=Clevrthings Status Server
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 /opt/status_server.py
+ExecStart=/usr/bin/python3 /opt/clevrthings_status_server.py
 WorkingDirectory=/opt
 Restart=always
 User=nobody
@@ -44,11 +44,11 @@ systemctl daemon-reload
 
 # Enable the service to start on boot
 echo "Enabling the service to start on boot..."
-systemctl enable status_server.service
+systemctl enable clevrthings_status_server.service
 
 # Start the service
-echo "Starting the status server..."
-systemctl start status_server.service
+echo "Starting the clevrthings status server..."
+systemctl start clevrthings_status_server.service
 
 # Confirm the service is running
-systemctl status status_server.service
+systemctl status clevrthings_status_server.service
