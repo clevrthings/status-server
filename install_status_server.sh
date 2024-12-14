@@ -11,3 +11,4 @@ sudo /tmp/start_status_server.sh
 
 # Clean up the tmp file
 sudo rm -r /tmp/start_status_server.sh
+echo Clean up...
